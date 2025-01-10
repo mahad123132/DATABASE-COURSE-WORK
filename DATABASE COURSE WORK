@@ -1,0 +1,27 @@
+-- Create the Patient_data table
+CREATE TABLE Patient_data (
+    Patient_ID INT(11) PRIMARY KEY,
+    First_Name VARCHAR(50),
+    Last_Name VARCHAR(50),
+    Date_of_Birth DATE,
+    Gender VARCHAR(10),
+    Phone_Number VARCHAR(20),
+    Next_of_Kin VARCHAR(100),
+    Location_ID INT(11),
+    Date_Added DATE,
+    Update_Date DATE,
+    FOREIGN KEY (Location_ID) REFERENCES Geographical_Location(Location_ID)
+);
+
+-- Create the Geographical_Location table
+CREATE TABLE Geographical_Location (
+    Location_ID INT(11) PRIMARY KEY,
+    Village VARCHAR(100),
+    Parish VARCHAR(100),
+    Sub_count VARCHAR(100),
+    County VARCHAR(100),
+    Region VARCHAR(50),
+    Population INT(11),
+    Coordinates VARCHAR(100),
+    Malaria_Risk_Level VARCHAR(50),
+    Health_Facilities_coun…
